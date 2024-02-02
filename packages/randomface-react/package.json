@@ -1,0 +1,48 @@
+{
+  "name": "randomface-react",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Vector faces generator focused on uniqueness",
+  "keywords": [
+    "randomface",
+    "randomart",
+    "avatar",
+    "security",
+    "generator"
+  ],
+  "author": {
+    "name": "lefelys",
+    "url": "https://lefelys.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lefelys/randomface",
+    "directory": "packages/randomface-react"
+  },
+  "scripts": {
+    "build": "tsup ./src",
+    "clean": "rm -rf ./dist/",
+    "cm": "cz",
+    "lint": "eslint ./src/ --fix",
+    "typecheck": "tsc --noEmit"
+  },
+  "packageManager": "pnpm@8.15.5",
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@types/node": "^20",
+    "eslint": "^8.56.0",
+    "react": "^18",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.1",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": "^16.13 || ^17 || ^18"
+  },
+  "main": "./dist/randomface.js",
+  "types": "./dist/randomface.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "randomface": "^0.1.0"
+  }
+}

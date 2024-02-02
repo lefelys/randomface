@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="fill:#000000;stroke:#000000" viewBox="0 0 140 140"
+    preserveAspectRatio="xMinYMin meet">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor"
+        stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
+        preserveAspectRatio="xMinYMin meet" fill-rule="evenodd" clip-rule="evenodd" x="20" y="20"
+        width="100" height="100" style="fill:#000000;stroke:#000000">
+        <path
+            d="M 6 13 C 4.4 11.8 11.8 11.6 14 10 C 16.2 8.4 10 4.2 17 5 C 24 5.8 45.4 7.4 49 14 C 52.6 20.6 40.4 37.6 35 38 C 29.6 38.4 27.8 21 22 16 C 16.2 11 7.6 14.2 6 13 Z" />
+        <path
+            d="M 70 18 C 74.4 15.6 89.4 14.2 94 14 C 98.6 13.8 92.8 11.2 93 17 C 93.2 22.8 99.2 41.2 95 43 C 90.8 44.8 77 31 72 26 C 67 21 65.6 20.4 70 18 Z" />
+        <path d="M 49 38 C 54.2 35 63.8 39 61 43 C 58.2 47 37.4 59 35 58 C 32.6 57 43.8 41 49 38 Z" />
+        <path
+            d="M 0 73 C -3.2 67.6 17.2 69.6 26 69 C 34.8 68.4 34.4 70.4 44 70 C 53.6 69.6 74.4 61.8 74 67 C 73.6 72.2 56.8 94.8 42 96 C 27.2 97.2 3.2 78.4 0 73 Z" />
+    </svg>
+</svg>

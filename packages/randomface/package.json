@@ -1,0 +1,54 @@
+{
+  "name": "randomface",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Vector faces generator focused on uniqueness",
+  "keywords": [
+    "randomface",
+    "randomart",
+    "avatar",
+    "security",
+    "generator"
+  ],
+  "author": {
+    "name": "lefelys",
+    "url": "https://lefelys.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lefelys/randomface",
+    "directory": "packages/randomface"
+  },
+  "scripts": {
+    "build": "tsup ./src",
+    "clean": "rm -rf ./dist/",
+    "cm": "cz",
+    "lint": "eslint ./src/ --fix",
+    "test:watch": "vitest --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "moduleResolution": "node",
+  "packageManager": "pnpm@8.15.5",
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "eslint": "^8.56.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.1",
+    "vitest": "^1.5.2"
+  },
+  "main": "./dist/randomface.js",
+  "module": "./dist/randomface.mjs",
+  "types": "./dist/randomface.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/randomface.js",
+      "import": "./dist/randomface.cjs",
+      "types": "./dist/randomface.d.ts"
+    }
+  },
+  "license": "MIT"
+}

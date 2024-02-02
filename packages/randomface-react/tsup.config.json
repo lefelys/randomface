@@ -1,0 +1,15 @@
+{
+    "clean": true,
+    "minify": true,
+    "format": [
+        "esm"
+    ],
+    "external": [
+        "react"
+    ],
+    "dts": true,
+    "injectStyle": false,
+    "entry": [
+        "src/randomface.tsx"
+    ]
+}

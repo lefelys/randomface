@@ -1,0 +1,25 @@
+<svg
+    fill='none' stroke='#000000' text='#000000' width="200" height="200" viewBox="-1 -1 102 102"
+    xmlns="http://www.w3.org/2000/svg"
+    stroke-width="1"
+>
+    <style>
+        .small {
+        font: bold 8px sans-serif;
+        stroke: none;
+        fill: black
+        }
+
+    </style>
+
+
+    <path d='M 0 0 L 100 0 L 100 100 L 0 100 Z' />
+    <path d='M 50 0 L 50 25' />
+    <path d='M 50 25 L 20 65' />
+    <path d='M 0 65 L 100 65' />
+    <path d='M 50 25 L 80 65' />
+    <text x="8" y="25" class="small">Left eye</text>
+    <text x="58" y="25" class="small">Right eye</text>
+    <text x="38" y="85" class="small">Mouth</text>
+    <text x="40" y="55" class="small">Nose</text>
+</svg>
