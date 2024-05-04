@@ -43,6 +43,6 @@
   "types": "./dist/randomface.d.ts",
   "license": "MIT",
   "dependencies": {
-    "randomface": "^0.1.0"
+    "randomface": "workspace:^"
   }
 }

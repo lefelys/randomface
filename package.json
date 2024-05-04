@@ -28,7 +28,8 @@
     "tailwindcss": "^3.3.0",
     "typescript": "^5",
     "vite-tsconfig-paths": "^4.3.1",
-    "vitest": "^1.2.2"
+    "vitest": "^1.2.2",
+    "turbo": "latest"
   },
   "license": "MIT"
 }
