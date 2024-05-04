@@ -1,8 +1,9 @@
 {
   "name": "randomface",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Vector faces generator focused on uniqueness",
+  "homepage": "https://randomface.lefelys.com/",
   "keywords": [
     "randomface",
     "randomart",
