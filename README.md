@@ -88,10 +88,10 @@ A real world example where Chernoff face can be useful - visual verification of 
 
 <p align="center">
     <picture>
-        <img src="assets/example-usecases/bill.svg" height="280px">
+        <img src="assets/example-usecases/bill.png" height="280px">
     </picture>
     &nbsp; &nbsp; &nbsp; &nbsp;
     <picture>
-        <img src="assets/example-usecases/form.svg" height="280px">
+        <img src="assets/example-usecases/form.png" height="280px">
     </picture>
 </p>
