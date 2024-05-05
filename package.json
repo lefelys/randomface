@@ -1,6 +1,6 @@
 {
   "name": "randomface",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vector faces generator focused on uniqueness",
   "scripts": {
     "build": "turbo build",

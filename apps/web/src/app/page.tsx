@@ -509,7 +509,7 @@ function DataInput({
             key='inputSHA256HEX'
             ref={inputRef}
             className={cn(
-              'h-[9rem] w-[95px] p-2 overflow-hidden leading-4 tracking-wider resize-none bg-background font-mono',
+              'h-[9rem] w-[92px] p-2 overflow-hidden leading-4 tracking-wider resize-none bg-background font-mono',
               inputError != '' &&
                 'bg-red-50 dark:bg-red-950 focus-visible:ring-red-600'
             )}
@@ -533,7 +533,7 @@ function DataInput({
             key='inputSHA256Base64'
             ref={inputRef}
             className={cn(
-              'h-[5rem] w-[123px] p-2 overflow-hidden leading-4 tracking-wider resize-none bg-background font-mono',
+              'h-[5rem] w-[119px] p-2 overflow-hidden leading-4 tracking-wider resize-none bg-background font-mono',
               inputError != '' &&
                 'bg-red-50 dark:bg-red-950 focus-visible:ring-red-600' //
             )}
@@ -697,7 +697,7 @@ function Face({ hash, faceCustomization }: FaceProps) {
       <div className='flex items-center w-full'>
         <h2 className='font-semibold text-sm px-1'>Your face</h2>
         <p className='ml-auto font-mono text-xs text-muted-foreground px-1'>
-          v0.1.0
+          v0.1.1
         </p>
       </div>
       <div
