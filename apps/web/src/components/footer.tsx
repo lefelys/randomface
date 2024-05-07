@@ -11,9 +11,10 @@ export default function Footer() {
     <div className='flex h-16 items-center'>
       <div className='flex space-x-4 items-center'>
         <a
-          href='https://lefelys.com'
+          href='https://github.com/lefelys'
           target='_blank'
-          className='text-sm hover:underline decoration-dotted decoration-muted-foreground text-muted-foreground/30 hover:text-foreground' rel="noopener"
+          className='text-sm hover:underline decoration-dotted decoration-muted-foreground text-muted-foreground/30 hover:text-foreground'
+          rel='noopener'
         >
           by lefelys
         </a>
