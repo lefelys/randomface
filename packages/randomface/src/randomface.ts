@@ -40,6 +40,13 @@ const mouthArea = [
   { x: 0, y: 100 },
 ];
 
+const noseArea = [
+  { x: 20, y: 65 },
+  { x: 50, y: 25 },
+  { x: 51, y: 25 },
+  { x: 80, y: 65 },
+];
+
 export interface FacePaths {
   leftEye: string;
   rightEye: string;
@@ -64,7 +71,6 @@ export function RandomfaceSVG(sha256hash: string): RandomfaceSVGData {
   }
 
   const leftEyePoints = new Array<Point>();
-  const rightEyePoints = new Array<Point>();
   const nosePoints = new Array<Point>();
   const mouthPoints = new Array<Point>();
 
@@ -74,25 +80,30 @@ export function RandomfaceSVG(sha256hash: string): RandomfaceSVGData {
   points.forEach((point) => {
     if (pointInPolygon(point, leftEyeArea)) {
       leftEyePoints.push(point);
-    } else if (pointInPolygon(point, rightEyeArea)) {
-      rightEyePoints.push(point);
     } else if (pointInPolygon(point, mouthArea)) {
       mouthPoints.push(point);
-    } else {
+    } else if (!pointInPolygon(point, rightEyeArea)) {
+      // Only add to nose if not in right eye area (we're ignoring right eye points)
       nosePoints.push(point);
     }
   });
 
-  const leftEyePath = sortPointsAndBuildPath(leftEyePoints);
-  const righEyePath = sortPointsAndBuildPath(rightEyePoints);
-  const nosePath = sortPointsAndBuildPath(nosePoints);
-  const mouthPath = sortPointsAndBuildPath(mouthPoints);
+  // Mirror left eye points to create right eye
+  const rightEyePoints = leftEyePoints.map((point) => ({
+    x: 100 - point.x,
+    y: point.y,
+  }));
+
+  const leftEyePath = buildPathWithCross(leftEyePoints, leftEyeArea);
+  const rightEyePath = buildPathWithCross(rightEyePoints, rightEyeArea);
+  const nosePath = buildPathWithCross(nosePoints, noseArea);
+  const mouthPath = buildPathWithCross(mouthPoints, mouthArea);
 
   return {
-    svg: `<svg viewBox='0 0 100 100' fill='currentColor' stroke-linejoin='round' stroke-linecap='round' stroke-width='2' preserveAspectRatio='xMinYMin meet' fill-rule='evenodd' clip-rule='evenodd'><path d='${leftEyePath}'></path><path d='${righEyePath}'></path><path d='${nosePath}'></path><path d='${mouthPath}'></path></svg>`,
+    svg: `<svg viewBox='0 0 100 100' fill='currentColor' stroke-linejoin='round' stroke-linecap='round' stroke-width='2' preserveAspectRatio='xMinYMin meet' fill-rule='evenodd' clip-rule='evenodd'><path d='${leftEyePath}'></path><path d='${rightEyePath}'></path><path d='${nosePath}'></path><path d='${mouthPath}'></path></svg>`,
     paths: {
       leftEye: leftEyePath,
-      rightEye: righEyePath,
+      rightEye: rightEyePath,
       nose: nosePath,
       mouth: mouthPath,
     },
@@ -106,4 +117,30 @@ function sortPointsAndBuildPath(points: Point[]) {
     sortPointsPolar(points, pointsCenterOfMass(points) ?? ({} as Point)),
     0.2
   );
+}
+
+function buildPathWithCross(points: Point[], area: Point[]): string {
+  if (points.length === 0) {
+    // No points - put cross in center of area
+    const center = polygonCenter(area);
+    return crossPath(center.x, center.y);
+  }
+  if (points.length === 1) {
+    // One point - put cross at that point
+    return crossPath(points[0].x, points[0].y);
+  }
+  return sortPointsAndBuildPath(points);
+}
+
+function polygonCenter(polygon: Point[]): Point {
+  const sum = polygon.reduce(
+    (acc, p) => ({ x: acc.x + p.x, y: acc.y + p.y }),
+    { x: 0, y: 0 }
+  );
+  return { x: sum.x / polygon.length, y: sum.y / polygon.length };
+}
+
+function crossPath(cx: number, cy: number, size = 5): string {
+  // Draw an X cross centered at (cx, cy)
+  return `M ${cx - size} ${cy - size} L ${cx + size} ${cy + size} M ${cx + size} ${cy - size} L ${cx - size} ${cy + size}`;
 }
