@@ -1,6 +1,6 @@
 {
   "name": "randomface-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "description": "Vector faces generator focused on uniqueness",
   "homepage": "https://randomface.lefelys.com/",

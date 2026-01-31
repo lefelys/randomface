@@ -697,7 +697,7 @@ function Face({ hash, faceCustomization }: FaceProps) {
       <div className='flex items-center w-full'>
         <h2 className='font-semibold text-sm px-1'>Your face</h2>
         <p className='ml-auto font-mono text-xs text-muted-foreground px-1'>
-          v0.1.1
+          v0.1.2
         </p>
       </div>
       <div
